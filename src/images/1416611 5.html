@@ -1,0 +1,2224 @@
+<!DOCTYPE html><html prefix="og: http://ogp.me/ns#" dir="ltr" lang="en" class="no-js">
+	<head>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"90ec53e80f",applicationID:"277147645"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?f(e,c,o):o()}function n(n,r,i,o){if(!p.aborted||o){e&&e(n,r,i);for(var a=t(i),c=v(n),f=c.length,u=0;u<f;u++)c[u].apply(a,r);var d=s[w[n]];return d&&d.push([b,n,r,a]),a}}function l(e,t){h[e]=v(e).concat(t)}function m(e,t){var n=h[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(n)}function y(e,t){u(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(6),s={},d={},p=t.exports=i();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},w=v&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:w,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0},{}],"wrap-function":[function(e,t,n){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(7),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;t.exports=function(e,t){function n(e,t,n,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){p([u,"",[r,a,i],c])}s(t+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(t+"err",[r,a,d],c),d}finally{s(t+"end",[r,a,f],c)}}return r(e)?e:(t||(t=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,t,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f<t.length;f++)c=t[f],a=e[c],r(a)||(e[c]=n(a,u?c+i:i,o,c))}function s(n,r,i){if(!f||t){var o=f;f=!0;try{e.emit(n,r,i,t)}catch(a){p([a,n,r,i])}f=o}}function d(e,t){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(e);return n.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(r){p([r])}for(var i in e)c.call(e,i)&&(t[i]=e[i]);return t}function p(t){try{e.emit("internal-error",t)}catch(n){}}return e||(e=i),n.inPlace=u,n.flag=a,n}},{}]},{},["loader"]);</script>
+	
+	<title>About DEVONLOVSANIMALS - Verizon Community</title>
+	
+	
+	<link rel="icon" type="image/png" href="/html/assets/vzw%20avatar.jpg">
+
+
+  <link rel="stylesheet" href="https://www.verizon.com/etc/designs/vzwcom/gnav20/core.css" type="text/css"/>
+  <script>
+    var gnavdl = {
+      "bu":"wireless",
+      "appid":"community"
+    };
+  </script>
+
+
+	<link rel="icon" href="/t5/image/serverpage/avatar-name/Highway/avatar-theme/candy/avatar-collection/Verizon_Core/avatar-display-size/favicon/version/2?xdesc=1.0"/>
+	
+	
+	<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/><link href="https://community.verizonwireless.com/t5/user/viewprofilepage/user-id/1416611" rel="canonical"/>
+	<meta content="128" property="og:image:width"/><meta content="https://community.verizonwireless.com/t5/image/serverpage/avatar-name/Highway/avatar-theme/candy/avatar-collection/Verizon_Core/avatar-display-size/profile/version/2?xdesc=1.0" property="og:image"/><meta content="profile" property="og:type"/><meta content="72" property="og:image:height"/><meta content="https://community.verizonwireless.com/t5/user/viewprofilepage/user-id/1416611" property="og:url"/><meta content="DEVONLOVSANIMALS" property="og:title"/><meta content="DEVONLOVSANIMALS" property="profile:username"/>
+	
+	
+	
+	    
+            	<link href="/skins/4529328/211d3a61208f0d929053566d68686932/verizon_skin.css" rel="stylesheet" type="text/css"/>
+            
+	
+
+	
+	
+	
+	
+	
+
+
+<script type="text/javascript" src="/t5/scripts/129B3FAC03679C8B82A528EDDD4E9DDC/lia-scripts-head-min.js"></script><script language="javascript" type="text/javascript">
+<!--
+window.FileAPI = { jsPath: '/html/assets/js/vendor/ng-file-upload-shim/' };
+LITHIUM.PrefetchData = {"Components":{},"commonResults":{}};
+LITHIUM.DEBUG = false;
+LITHIUM.CommunityJsonObject = {
+  "Validation" : {
+    "image.description" : {
+      "min" : 0,
+      "max" : 1000,
+      "isoneof" : [ ],
+      "type" : "string"
+    },
+    "tkb.toc_maximum_heading_level" : {
+      "min" : 1,
+      "max" : 6,
+      "isoneof" : [ ],
+      "type" : "integer"
+    },
+    "tkb.toc_heading_list_style" : {
+      "min" : 0,
+      "max" : 50,
+      "isoneof" : [
+        "disc",
+        "circle",
+        "square",
+        "none"
+      ],
+      "type" : "string"
+    },
+    "blog.toc_maximum_heading_level" : {
+      "min" : 1,
+      "max" : 6,
+      "isoneof" : [ ],
+      "type" : "integer"
+    },
+    "tkb.toc_heading_indent" : {
+      "min" : 5,
+      "max" : 50,
+      "isoneof" : [ ],
+      "type" : "integer"
+    },
+    "blog.toc_heading_indent" : {
+      "min" : 5,
+      "max" : 50,
+      "isoneof" : [ ],
+      "type" : "integer"
+    },
+    "blog.toc_heading_list_style" : {
+      "min" : 0,
+      "max" : 50,
+      "isoneof" : [
+        "disc",
+        "circle",
+        "square",
+        "none"
+      ],
+      "type" : "string"
+    }
+  },
+  "User" : {
+    "viewHref" : "https://community.verizonwireless.com/t5/user/viewprofilepage/user-id/1416611",
+    "settings" : {
+      "imageupload.legal_file_extensions" : "*.jpg;*.JPG;*.jpeg;*.JPEG;*.gif;*.GIF;*.png;*.PNG",
+      "config.enable_avatar" : true,
+      "integratedprofile.show_klout_score" : true,
+      "layout.sort_view_by_last_post_date" : true,
+      "layout.friendly_dates_enabled" : false,
+      "profileplus.allow.anonymous.scorebox" : false,
+      "tkb.message_sort_default" : "topicPublishDate",
+      "layout.format_pattern_date" : "MM-dd-yyyy",
+      "config.require_search_before_post" : "off",
+      "isUserLinked" : false,
+      "integratedprofile.cta_add_topics_dismissal_timestamp" : -1,
+      "layout.message_body_image_max_size" : 1000,
+      "profileplus.everyone" : false,
+      "integratedprofile.cta_connect_wide_dismissal_timestamp" : -1,
+      "blog.toc_maximum_heading_level" : "",
+      "integratedprofile.hide_social_networks" : false,
+      "blog.toc_heading_indent" : "",
+      "contest.entries_per_page_num" : 20,
+      "layout.messages_per_page_linear" : 10,
+      "integratedprofile.cta_manage_topics_dismissal_timestamp" : -1,
+      "profile.shared_profile_test_group" : false,
+      "integratedprofile.cta_personalized_feed_dismissal_timestamp" : -1,
+      "integratedprofile.curated_feed_size" : 10,
+      "contest.one_kudo_per_contest" : false,
+      "integratedprofile.enable_social_networks" : false,
+      "integratedprofile.my_interests_dismissal_timestamp" : -1,
+      "profile.language" : "en",
+      "layout.friendly_dates_max_age_days" : 31,
+      "layout.threading_order" : "thread_descending",
+      "blog.toc_heading_list_style" : "disc",
+      "useRecService" : false,
+      "layout.module_welcome" : "<#if user.registered == true>\r\n<h1>Hey, ${user.login}.<\/h1>\r\n<#else>\r\n<h1 style=\"color:#ffffff;\">Welcome to the Community<\/h1>\r\n\r\n<h4 style=\"color:#ffffff;\">\r\nWelcome to the new and improved Verizon Community, we are so excited you are here! Whether you are new or an existing member of the community we can't wait for you to explore all that we have in store! <br><a href=\"https://community.verizonwireless.com/plugins/common/feature/oauth2sso_v2/sso_login_redirect?referer=https%3A%2F%2Fcommunity.verizonwireless.com%2F\" class=\"post-btn lia-button lia-button-primary\"\">Sign In<\/a><\/h4>\r\n\r\n<\/#if>",
+      "imageupload.max_uploaded_images_per_upload" : 100,
+      "imageupload.max_uploaded_images_per_user" : 1000,
+      "integratedprofile.connect_mode" : "",
+      "tkb.toc_maximum_heading_level" : "",
+      "tkb.toc_heading_list_style" : "disc",
+      "sharedprofile.show_hovercard_score" : true,
+      "config.search_before_post_scope" : "community",
+      "tkb.toc_heading_indent" : "",
+      "p13n.cta.recommendations_feed_dismissal_timestamp" : -1,
+      "imageupload.max_file_size" : 3072,
+      "layout.show_batch_checkboxes" : true,
+      "integratedprofile.cta_connect_slim_dismissal_timestamp" : -1
+    },
+    "isAnonymous" : false,
+    "policies" : {
+      "image-upload.process-and-remove-exif-metadata" : false
+    },
+    "registered" : true,
+    "emailRef" : "Vicki.apodaca@yahoo.com",
+    "id" : 1416611,
+    "login" : "DEVONLOVSANIMALS"
+  },
+  "Server" : {
+    "communityPrefix" : "/kwdez63697",
+    "nodeChangeTimeStamp" : 1606430041068,
+    "tapestryPrefix" : "/t5",
+    "deviceMode" : "MOBILE",
+    "responsiveDeviceMode" : "MOBILE",
+    "version" : "20.10",
+    "branch" : "20.10-release",
+    "showTextKeys" : false
+  },
+  "Config" : {
+    "phase" : "prod",
+    "integratedprofile.cta.reprompt.delay" : 30,
+    "profileplus.tracking" : {
+      "profileplus.tracking.enable" : false,
+      "profileplus.tracking.click.enable" : false,
+      "profileplus.tracking.impression.enable" : false
+    },
+    "app.revision" : "2011170331-s1042c444f3-b39",
+    "navigation.manager.community.structure.limit" : "1000"
+  },
+  "Activity" : {
+    "Results" : [ ]
+  },
+  "NodeContainer" : {
+    "viewHref" : "https://community.verizonwireless.com/t5/Top/ct-p/top",
+    "description" : "",
+    "id" : "top",
+    "shortTitle" : "Top",
+    "title" : "Top",
+    "nodeType" : "category"
+  },
+  "Page" : {
+    "skins" : [
+      "verizon_skin",
+      "theme_support",
+      "theme_base",
+      "responsive_peak"
+    ],
+    "authUrls" : {
+      "loginUrl" : "/plugins/common/feature/oauth2sso_v2/sso_login_redirect?referer=https%3A%2F%2Fcommunity.verizonwireless.com%2Ft5%2Fuser%2Fv2%2Fviewprofilepage%2Fuser-id%2F1416611",
+      "loginUrlNotRegistered" : "/plugins/common/feature/oauth2sso_v2/sso_login_redirect?redirectreason=notregistered&referer=https%3A%2F%2Fcommunity.verizonwireless.com%2Ft5%2Fuser%2Fv2%2Fviewprofilepage%2Fuser-id%2F1416611",
+      "loginUrlNotRegisteredDestTpl" : "/plugins/common/feature/oauth2sso_v2/sso_login_redirect?redirectreason=notregistered&referer=%7B%7BdestUrl%7D%7D"
+    },
+    "name" : "ViewProfilePage",
+    "rtl" : false,
+    "object" : {
+      "viewHref" : "/t5/user/viewprofilepage/user-id/1416611",
+      "id" : 1416611,
+      "page" : "ViewProfilePage",
+      "type" : "User",
+      "login" : "DEVONLOVSANIMALS"
+    }
+  },
+  "WebTracking" : {
+    "Activities" : { },
+    "path" : "Community:Verizon Community"
+  },
+  "Feedback" : {
+    "targeted" : { }
+  },
+  "Seo" : {
+    "markerEscaping" : {
+      "pathElement" : {
+        "prefix" : "@",
+        "match" : "^[0-9][0-9]$"
+      },
+      "enabled" : false
+    }
+  },
+  "TopLevelNode" : {
+    "viewHref" : "https://community.verizonwireless.com/",
+    "description" : "",
+    "id" : "kwdez63697",
+    "shortTitle" : "Verizon Community",
+    "title" : "Verizon Community",
+    "nodeType" : "Community"
+  },
+  "Community" : {
+    "viewHref" : "https://community.verizonwireless.com/",
+    "integratedprofile.lang_code" : "en",
+    "integratedprofile.country_code" : "US",
+    "id" : "kwdez63697",
+    "shortTitle" : "Verizon Community",
+    "title" : "Verizon Community"
+  },
+  "CoreNode" : {
+    "viewHref" : "https://community.verizonwireless.com/",
+    "settings" : { },
+    "description" : "",
+    "id" : "kwdez63697",
+    "shortTitle" : "Verizon Community",
+    "title" : "Verizon Community",
+    "nodeType" : "Community",
+    "ancestors" : [ ]
+  }
+};
+LITHIUM.Components.RENDER_URL = '/t5/util/componentrenderpage/component-id/#{component-id}?render_behavior=raw';
+LITHIUM.Components.ORIGINAL_PAGE_NAME = 'user/v2/ViewProfilePage';
+LITHIUM.Components.ORIGINAL_PAGE_CONTEXT = 'ciQX-lBGvDBnTuum7_8EeI0t8RAFRzm0OqIgRyBgQ4bKoayHriUEQk4UxZL-40Nj07Oc4zsqlhC6rsz2RTE6Rtsuj-LMAo9IjswjrI1CuB2_jxi2nOYsBecqKflezJtpy3F2gVXUHs3-5-6XWSW1rSe-6GexTz7BnurnfsLK1MunC9l_yUdMhzoGKazmbp8QUDk4pIR6MX1subk3M_pw_Seh0iQAEdBvxB7uOMb_HYs0GU91D9rtOJQLs-faUaIUOmc4TSJlO8A03H6d1zQ1_Cd1vNfbl3i3sRoXNG-ZMPiRS5SHDCVTtwKyGROhqAtA';
+LITHIUM.Css = {
+  "BASE_DEFERRED_IMAGE" : "lia-deferred-image",
+  "BASE_BUTTON" : "lia-button",
+  "BASE_SPOILER_CONTAINER" : "lia-spoiler-container",
+  "BASE_TABS_INACTIVE" : "lia-tabs-inactive",
+  "BASE_TABS_ACTIVE" : "lia-tabs-active",
+  "BASE_AJAX_REMOVE_HIGHLIGHT" : "lia-ajax-remove-highlight",
+  "BASE_FEEDBACK_SCROLL_TO" : "lia-feedback-scroll-to",
+  "BASE_FORM_FIELD_VALIDATING" : "lia-form-field-validating",
+  "BASE_FORM_ERROR_TEXT" : "lia-form-error-text",
+  "BASE_FEEDBACK_INLINE_ALERT" : "lia-panel-feedback-inline-alert",
+  "BASE_BUTTON_OVERLAY" : "lia-button-overlay",
+  "BASE_TABS_STANDARD" : "lia-tabs-standard",
+  "BASE_AJAX_INDETERMINATE_LOADER_BAR" : "lia-ajax-indeterminate-loader-bar",
+  "BASE_AJAX_SUCCESS_HIGHLIGHT" : "lia-ajax-success-highlight",
+  "BASE_CONTENT" : "lia-content",
+  "BASE_JS_HIDDEN" : "lia-js-hidden",
+  "BASE_AJAX_LOADER_CONTENT_OVERLAY" : "lia-ajax-loader-content-overlay",
+  "BASE_FORM_FIELD_SUCCESS" : "lia-form-field-success",
+  "BASE_FORM_WARNING_TEXT" : "lia-form-warning-text",
+  "BASE_FORM_FIELDSET_CONTENT_WRAPPER" : "lia-form-fieldset-content-wrapper",
+  "BASE_AJAX_LOADER_OVERLAY_TYPE" : "lia-ajax-overlay-loader",
+  "BASE_FORM_FIELD_ERROR" : "lia-form-field-error",
+  "BASE_SPOILER_CONTENT" : "lia-spoiler-content",
+  "BASE_FORM_SUBMITTING" : "lia-form-submitting",
+  "BASE_EFFECT_HIGHLIGHT_START" : "lia-effect-highlight-start",
+  "BASE_FORM_FIELD_ERROR_NO_FOCUS" : "lia-form-field-error-no-focus",
+  "BASE_EFFECT_HIGHLIGHT_END" : "lia-effect-highlight-end",
+  "BASE_SPOILER_LINK" : "lia-spoiler-link",
+  "FACEBOOK_LOGOUT" : "lia-component-users-action-logout",
+  "BASE_DISABLED" : "lia-link-disabled",
+  "FACEBOOK_SWITCH_USER" : "lia-component-admin-action-switch-user",
+  "BASE_FORM_FIELD_WARNING" : "lia-form-field-warning",
+  "BASE_AJAX_LOADER_FEEDBACK" : "lia-ajax-loader-feedback",
+  "BASE_AJAX_LOADER_OVERLAY" : "lia-ajax-loader-overlay",
+  "BASE_LAZY_LOAD" : "lia-lazy-load"
+};
+LITHIUM.noConflict = true;
+LITHIUM.useCheckOnline = false;
+LITHIUM.RenderedScripts = [
+  "AjaxSupport.js",
+  "prism.js",
+  "jquery.ui.draggable.js",
+  "LiModernizr.js",
+  "jquery.iframe-transport.js",
+  "Throttle.js",
+  "jquery.ui.resizable.js",
+  "json2.js",
+  "UserBadges.js",
+  "DataHandler.js",
+  "UserNotificationWidget.js",
+  "jquery.scrollTo.js",
+  "jquery.delayToggle-1.0.js",
+  "RealtimeNotificationSubscription.js",
+  "jquery.lithium-toastmessage.js",
+  "Video.js",
+  "PrivateNotesSummary2.js",
+  "jquery.hoverIntent-r6.js",
+  "InformationBox.js",
+  "jquery.blockui.js",
+  "ElementQueries.js",
+  "jquery.cookie-1.4.0.js",
+  "Namespace.js",
+  "jquery.lithium-selector-extensions.js",
+  "Sandbox.js",
+  "jquery.ajax-cache-response-1.0.js",
+  "PolyfillsAll.js",
+  "jquery.ui.widget.js",
+  "Auth.js",
+  "Forms.js",
+  "DeferredImages.js",
+  "ResizeSensor.js",
+  "Components.js",
+  "ForceLithiumJQuery.js",
+  "ElementMethods.js",
+  "NoConflict.js",
+  "jquery.clone-position-1.0.js",
+  "Text.js",
+  "jquery.ui.core.js",
+  "jquery.css-data-1.0.js",
+  "jquery.ui.mouse.js",
+  "jquery.fileupload.js",
+  "Cache.js",
+  "jquery.appear-1.1.1.js",
+  "Loader.js",
+  "Events.js",
+  "Link.js",
+  "Lithium.js",
+  "SpoilerToggle.js",
+  "PartialRenderProxy.js",
+  "jquery.effects.core.js",
+  "jquery.position-toggle-1.0.js",
+  "jquery.effects.slide.js",
+  "jquery.js",
+  "jquery.tmpl-1.1.1.js",
+  "jquery.viewport-1.0.js",
+  "atmosphere.js",
+  "jquery.function-utils-1.0.js",
+  "jquery.ui.dialog.js",
+  "jquery.idle-timer.js",
+  "jquery.json-1.3.js",
+  "Dialog.js",
+  "jquery.iframe-shim-1.0.js",
+  "UserNavigation2.js",
+  "Globals.js",
+  "jquery.ui.position.js",
+  "ActiveCast3.js"
+];// -->
+</script><script type="text/javascript" src="/t5/scripts/D60EB96AE5FF670ED274F16ABB044ABD/lia-scripts-head-min.js"></script></head>
+	<body class="lia-user-status-registered ViewProfilePage lia-body" id="lia-body">
+	
+	
+	<div id="17EBEB49" class="ServiceNodeInfoHeader">
+</div>
+	
+	
+	
+	
+
+	<div class="lia-page">
+		<center>
+			
+				
+  <!-- ************ start : global header 2.0 ************ -->
+  <div id="vz-gh20"></div>
+  <!-- ************ end : global header 2.0 ************ -->
+
+					
+	
+	<div class="MinimumWidthContainer">
+		<div class="min-width-wrapper">
+			<div class="min-width">		
+				
+						<div class="lia-content">
+                            
+							
+							
+							
+		
+	<div class="lia-quilt lia-quilt-view-profile-page lia-quilt-layout-two-column-main-side lia-top-quilt lia-user-viewing-self">
+	<div class="lia-quilt-row lia-quilt-row-header">
+		<div class="lia-quilt-column lia-quilt-column-24 lia-quilt-column-single lia-quilt-column-common-header">
+			<div class="lia-quilt-column-alley lia-quilt-column-alley-single">
+	
+		
+			<div class="lia-quilt lia-quilt-header lia-quilt-layout-header lia-component-quilt-header">
+	<div class="lia-quilt-row lia-quilt-row-main-header">
+		<div class="lia-quilt-column lia-quilt-column-20 lia-quilt-column-left lia-quilt-column-header-left">
+			<div class="lia-quilt-column-alley lia-quilt-column-alley-left">
+	
+		
+			
+
+<div class="horizontal-nav"> <div class="slide-out-menu hidden-lg"> <div class="lia-slide-out-nav-menu lia-component-common-widget-slide-out-nav-menu"> <button li-bindable="" li-common-element-hook="navMenuTriggerElement" class="lia-slide-menu-trigger lia-slide-out-nav-menu-wrapper"> <div ng-non-bindable="" class="lia-slide-out-nav-menu-title"> Browse </div> </button> <li:common-slide-menu li-bindable="" trigger-element="navMenuTriggerElement" li-direction="left" style="display:none"> <div class="lia-quilt lia-quilt-navigation-slide-out-menu lia-quilt-layout-one-column"> <div class="lia-quilt-row lia-quilt-row-header"> <div class="lia-quilt-column lia-quilt-column-24 lia-quilt-column-single lia-quilt-column-common-header lia-mark-empty"> </div> </div><div class="lia-quilt-row lia-quilt-row-main"> <div class="lia-quilt-column lia-quilt-column-24 lia-quilt-column-single lia-quilt-column-main-content"> <div class="lia-quilt-column-alley lia-quilt-column-alley-single"> <li:community-navigation class="lia-component-community-widget-navigation" li-bindable="" li-instance="0" componentId="community.widget.navigation" mode="default"></li:community-navigation> </div> </div> </div><div class="lia-quilt-row lia-quilt-row-footer"> <div class="lia-quilt-column lia-quilt-column-24 lia-quilt-column-single lia-quilt-column-common-footer lia-mark-empty"> </div> </div> </div> </li:common-slide-menu> </div> <ul class="custom-sub-nav"> <li class="community-link"><a href="/">Community Home</a></li> </ul> </div> <ul class="custom-sub-nav visible-lg-block"> <li class="community-link"><a href="/">Community Home</a></li> <li class="has-children"> <a href="/t5/Android/ct-p/android" class="android">Android</a> <ul class="header-sub-nav android"> <li class="depth2"> <a href="/t5/Samsung/ct-p/samsung" class="nav-category">Samsung</a> <ul class="header-secondary-sub-nav"> <li class="depth3"> <a href="/t5/Samsung-Galaxy-S-Series/bd-p/samsung-galaxy-s-series" class="nav-board">Samsung Galaxy S Series</a> </li> <li class="depth3"> <a href="/t5/Samsung-Galaxy-Note/bd-p/samsung-galaxy-note" class="nav-board">Samsung Galaxy Note</a> </li> <li class="depth3"> <a href="/t5/Samsung-Galaxy-Tab/bd-p/samsung-galaxy-tab" class="nav-board">Samsung Galaxy Tab</a> </li> </ul> </li> <li class="depth2"> <a href="/t5/Motorola/ct-p/motorola" class="nav-category">Motorola</a> <ul class="header-secondary-sub-nav"> <li class="depth3"> <a href="/t5/DROID/bd-p/droid" class="nav-board">DROID</a> </li> <li class="depth3"> <a href="/t5/Moto-Z-Droid/bd-p/moto-z-droid" class="nav-board">Moto Z Droid</a> </li> </ul> </li> <li class="depth2"> <a href="/t5/Google-Pixel/bd-p/google-pixel" class="nav-board">Google Pixel</a> </li> <li class="depth2"> <a href="/t5/Verizon-Ellipsis-Tablets/bd-p/verizon-ellipsis" class="nav-board">Verizon Ellipsis Tablets</a> </li> <li class="depth2"> <a href="/t5/HTC-One/bd-p/htc-one" class="nav-board">HTC One</a> </li> <li class="depth2"> <a href="/t5/LG/bd-p/lg" class="nav-board">LG</a> </li> <li class="depth2"> <a href="/t5/Xperia-by-Sony-Ericsson/bd-p/xperia-by-sony-ericsson" class="nav-board">Xperia by Sony Ericsson</a> </li> <li class="depth2"> <a href="/t5/Android-General/bd-p/android-general" class="nav-board">Android General</a> </li> </ul> </li> <li class="has-children"> <a href="/t5/Apple/ct-p/apple" class="apple">Apple</a> <ul class="header-sub-nav apple"> <li class="depth2"> <a href="/t5/Apple-General/bd-p/apple-general" class="nav-board">Apple General</a> </li> <li class="depth2"> <a href="/t5/iPhone-Pro-12/bd-p/iPhonePro12" class="nav-board">iPhone Pro 12</a> </li> <li class="depth2"> <a href="/t5/iPhone-11-11-Pro-11-Pro-Max/bd-p/iphone-11" class="nav-board">iPhone 11 / 11 Pro / 11 Pro Max</a> </li> <li class="depth2"> <a href="/t5/iPhone-X-Xr-Xs/bd-p/iphonex" class="nav-board">iPhone X / Xr / Xs</a> </li> <li class="depth2"> <a href="/t5/iPhone-8/bd-p/iphone8" class="nav-board">iPhone 8</a> </li> <li class="depth2"> <a href="/t5/iPad/bd-p/ipad" class="nav-board">iPad</a> </li> <li class="depth2"> <a href="/t5/iPhone-7/bd-p/iphone7" class="nav-board">iPhone 7</a> </li> <li class="depth2"> <a href="/t5/iPhone-6/bd-p/iphone6" class="nav-board">iPhone 6</a> </li> <li class="depth2"> <a href="/t5/iPhone-5/bd-p/iphone5" class="nav-board">iPhone 5</a> </li> <li class="depth2"> <a href="/t5/iPhone-SE/bd-p/iphone-se" class="nav-board">iPhone SE</a> </li> <li class="depth2"> <a href="/t5/iPhone-4/bd-p/iphone4" class="nav-board">iPhone 4</a> </li> </ul> </li> <li class="has-children"> <a href="/t5/Additional-Products/ct-p/additional-products" class="additional-products">Additional Products</a> <ul class="header-sub-nav additional-products"> <li class="depth2"> <a href="/t5/Accessories/bd-p/accessories" class="nav-board">Accessories</a> </li> <li class="depth2"> <a href="/t5/Blackberry/bd-p/blackberry" class="nav-board">Blackberry</a> </li> <li class="depth2"> <a href="/t5/Windows-Phone/bd-p/windows-phone" class="nav-board">Windows Phone</a> </li> <li class="depth2"> <a href="/t5/Jetpack-4G-LTE-Mobile-Hotspot/bd-p/jetpack-4g-lte-mobile-hotspot" class="nav-board">Jetpack 4G LTE Mobile Hotspot</a> </li> <li class="depth2"> <a href="/t5/Network-Extender/bd-p/network-extender" class="nav-board">Network Extender</a> </li> <li class="depth2"> <a href="/t5/Verizon-4G-LTE-Router/bd-p/verizon-4g-lte-router" class="nav-board">Verizon 4G LTE Router</a> </li> <li class="depth2"> <a href="/t5/Verizon-Ellipsis-Jetpack/bd-p/verizon-ellipsis-jetpack" class="nav-board">Verizon Ellipsis Jetpack</a> </li> <li class="depth2"> <a href="/t5/Verizon-SmartHub/bd-p/verizon-smarthub" class="nav-board">Verizon SmartHub</a> </li> <li class="depth2"> <a href="/t5/Additional-Products-General/bd-p/additional-products-general" class="nav-board">Additional Products General</a> </li> <li class="depth2"> <a href="/t5/Basic-Phones/bd-p/basic-phones" class="nav-board">Basic Phones</a> </li> </ul> </li> <li class="has-children"> <a href="/t5/Services/ct-p/verizon-wireless-services" class="verizon-wireless-services">Services</a> <ul class="header-sub-nav verizon-wireless-services"> <li class="depth2"> <a href="/t5/My-Verizon/bd-p/my-verizon" class="nav-board">My Verizon</a> </li> <li class="depth2"> <a href="/t5/5G/bd-p/5G" class="nav-board">5G</a> </li> <li class="depth2"> <a href="/t5/Prepaid-Plans/bd-p/prepaid-plans" class="nav-board">Prepaid Plans</a> </li> <li class="depth2"> <a href="/t5/4G-LTE-LTE-Advanced/bd-p/4g-lte-and-lte-advanced" class="nav-board">4G LTE - LTE Advanced</a> </li> <li class="depth2"> <a href="/t5/Bring-Your-Own-Device/bd-p/bring-your-own-device" class="nav-board">Bring Your Own Device</a> </li> <li class="depth2"> <a href="/t5/Verizon-Smart-Family/bd-p/verizon-smart-family" class="nav-board">Verizon Smart Family</a> </li> <li class="depth2"> <a href="/t5/International-Travel/bd-p/international-travel" class="nav-board">International Travel</a> </li> <li class="depth2"> <a href="/t5/Verizon-Cloud/bd-p/verizon-cloud" class="nav-board">Verizon Cloud</a> </li> <li class="depth2"> <a href="/t5/Verizon-Messages/bd-p/verizon-messages" class="nav-board">Verizon Messages</a> </li> <li class="depth2"> <a href="/t5/Verizon-Wireless-Services/bd-p/verizon-wireless-services-general" class="nav-board">Verizon Wireless Services General</a> </li> <li class="depth2"> <a href="/t5/Voice-and-Broadband-Calling/bd-p/voice-broadband-calling-plans" class="nav-board">Voice and Broadband Calling Plans</a> </li> <li class="depth2"> <a href="/t5/Total-Mobile-Protection/bd-p/total-mobile-protection" class="nav-board">Total Mobile Protection</a> </li> <li class="depth2"> <a href="/t5/My-Business-Account/bd-p/my-business-account" class="nav-board">My Business Account</a> </li> </ul> </li> <li class="has-children"> <a href="/t5/Community-Central/ct-p/verizon-community" class="verizon-community">Community Central</a> <ul class="header-sub-nav verizon-community"> <li class="depth2"> <a href="/t5/Community-Announcements/bd-p/welcomeboard" class="nav-board">Community Announcements</a> </li> <li class="depth2"> <a href="/t5/Suggestions-for-this-Community/bd-p/suggestions" class="nav-board">Suggestions for this Community</a> </li> <li class="depth2"> <a href="/t5/Community-Blog/bg-p/welcome" class="nav-board">Community Blog</a> </li> <li class="depth2"> <a href="/t5/Off-Topic-Lounge/bd-p/off-topic" class="nav-board">Off-Topic Lounge</a> </li> </ul> </li> </ul> </div>
+
+
+		
+	
+	
+</div>
+		</div><div class="lia-quilt-column lia-quilt-column-04 lia-quilt-column-right lia-quilt-column-header-right">
+			<div class="lia-quilt-column-alley lia-quilt-column-alley-right">
+	
+		<div class="lia-header-actions">
+			
+		
+			
+		
+			
+		
+			<div class="lia-component-users-widget-menu">
+	<div id="realtimenotificationsubscription"></div>
+    
+
+        <ul role="presentation" class="UserNavigation lia-list-standard-inline">
+            <li role="presentation" class="user-navigation-parent-dropdown">
+
+                <div li-common-element-hook="userMenuTriggerElement" li-bindable="" class="user-navigation-settings-dropdown-link">
+                    <div class="UserAvatar lia-user-avatar lia-component-common-widget-user-avatar ng-non-bindable">
+	
+			
+				<a class="UserAvatar lia-link-navigation" aria-haspopup="true" aria-expanded="false" aria-label="Show User Options menu" target="_self" id="link_1" href="/t5/user/viewprofilepage/user-id/1416611"><img class="lia-user-avatar-message" title="DEVONLOVSANIMALS" alt="DEVONLOVSANIMALS" id="display" src="/t5/image/serverpage/avatar-name/Highway/avatar-theme/candy/avatar-collection/Verizon_Core/avatar-display-size/message/version/2?xdesc=1.0"/>
+					
+				</a>
+				
+			
+		
+</div>
+                    <div ng-non-bindable="" class="user-navigation-user-profile">
+                        <div>
+                            <a class="lia-link-navigation view-profile-link lia-component-users-action-view-user-profile" id="viewUserProfile" href="/t5/user/viewprofilepage/user-id/1416611">DEVONLOVSANIMALS</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lia-menu-user-dropdown">
+                    <div class="user-navigation-settings-drop-down">
+                        <div class="user-navigation-settings-drop-down-inner">
+                            <ul role="list" id="userNavDropdown" class="lia-list-standard lia-menu-user-nav">
+	
+                                <div class="lia-quilt lia-quilt-user-slide-out-menu lia-quilt-layout-user-slide-out-menu">
+	<div class="lia-quilt-row lia-quilt-row-profile-card">
+		<div class="lia-quilt-column lia-quilt-column-24 lia-quilt-column-single lia-quilt-column-profile-card">
+			<div class="lia-quilt-column-alley lia-quilt-column-alley-single">
+	
+		
+			<li:users-current-user class="lia-component-users-widget-current-user-summary" li-bindable="" li-instance="0" componentId="users.widget.current-user-summary" mode="default" type="profile-card"></li:users-current-user>
+		
+	
+	
+</div>
+		</div>
+	</div><div class="lia-quilt-row lia-quilt-row-profile-stats">
+		<div class="lia-quilt-column lia-quilt-column-24 lia-quilt-column-single lia-quilt-column-profile-stats lia-mark-empty">
+			
+		</div>
+	</div><div class="lia-quilt-row lia-quilt-row-profile-links">
+		<div class="lia-quilt-column lia-quilt-column-24 lia-quilt-column-single lia-quilt-column-profile-links">
+			<div class="lia-quilt-column-alley lia-quilt-column-alley-single">
+	
+		
+			<a class="lia-link-navigation view-profile-link lia-component-users-action-view-user-profile-modern" id="viewUserProfileModern" href="/t5/user/viewprofilepage/user-id/1416611">My profile</a>
+		
+			
+		
+			
+		
+			
+		
+			<a class="lia-link-navigation user-profile-link lia-component-users-action-my-profile-settings" id="myProfileSettings" href="/t5/user/myprofilepage/tab/personal-profile">My settings</a>
+		
+			<a class="lia-link-navigation lia-component-users-actions-my-subscriptions" id="userMySubscriptions" href="/t5/user/myprofilepage/tab/user-subscriptions">My subscriptions</a>
+		
+			<a class="lia-link-navigation faq-link lia-component-help-action-faq" id="faqPage" href="/t5/help/faqpage">Help</a>
+		
+			
+		
+			
+		
+			
+		
+			<a class="lia-link-navigation logout-link lia-link-ticket-post-action lia-component-users-action-logout" data-lia-action-token="2cCWZSGrjU2t9NNrM4hFAV-RZy6RXUZRIZgRLvaLsrrsSlno-6oUsW1Vmx8HSVe_" rel="nofollow" id="logoutPage" href="/t5/community/page.logoutpage?t:cp=authentication/contributions/unticketedauthenticationactions&amp;referer=https%3A%2F%2Fcommunity.verizonwireless.com%2F">Sign out</a>
+		
+	
+	
+</div>
+		</div>
+	</div>
+</div>
+                            
+</ul>
+                            <div class="user-navigation-arrow"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <li:common-slide-menu li-bindable="" trigger-element="userMenuTriggerElement" li-direction="right" li-swipe-to-close="'true'" style="display:none" li-slide-menu-class="'lia-menu-user-slide-out-container'">
+                    <div class="lia-quilt lia-quilt-user-slide-out-menu lia-quilt-layout-user-slide-out-menu lia-menu-user-slide-out">
+	<div class="lia-quilt-row lia-quilt-row-profile-card">
+		<div class="lia-quilt-column lia-quilt-column-24 lia-quilt-column-single lia-quilt-column-profile-card">
+			<div class="lia-quilt-column-alley lia-quilt-column-alley-single">
+	
+		
+			<li:users-current-user class="lia-component-users-widget-current-user-summary" li-bindable="" li-instance="0" componentId="users.widget.current-user-summary" mode="default" type="profile-card"></li:users-current-user>
+		
+	
+	
+</div>
+		</div>
+	</div><div class="lia-quilt-row lia-quilt-row-profile-stats">
+		<div class="lia-quilt-column lia-quilt-column-24 lia-quilt-column-single lia-quilt-column-profile-stats lia-mark-empty">
+			
+		</div>
+	</div><div class="lia-quilt-row lia-quilt-row-profile-links">
+		<div class="lia-quilt-column lia-quilt-column-24 lia-quilt-column-single lia-quilt-column-profile-links">
+			<div class="lia-quilt-column-alley lia-quilt-column-alley-single">
+	
+		
+			<a class="lia-link-navigation view-profile-link lia-component-users-action-view-user-profile-modern" id="viewUserProfileModern_0" href="/t5/user/viewprofilepage/user-id/1416611">My profile</a>
+		
+			
+		
+			
+		
+			
+		
+			<a class="lia-link-navigation user-profile-link lia-component-users-action-my-profile-settings" id="myProfileSettings_0" href="/t5/user/myprofilepage/tab/personal-profile">My settings</a>
+		
+			<a class="lia-link-navigation lia-component-users-actions-my-subscriptions" id="userMySubscriptions_0" href="/t5/user/myprofilepage/tab/user-subscriptions">My subscriptions</a>
+		
+			<a class="lia-link-navigation faq-link lia-component-help-action-faq" id="faqPage_0" href="/t5/help/faqpage">Help</a>
+		
+			
+		
+			
+		
+			
+		
+			<a class="lia-link-navigation logout-link lia-link-ticket-post-action lia-component-users-action-logout" data-lia-action-token="jD75N9w_E9uXzvRL2GqqQa22GJusPCoYzYAjXluO-uYkRl7gRy8SFfApdNP5ti3p" rel="nofollow" id="logoutPage_0" href="/t5/community/page.logoutpage?t:cp=authentication/contributions/unticketedauthenticationactions&amp;referer=https%3A%2F%2Fcommunity.verizonwireless.com%2F">Sign out</a>
+		
+	
+	
+</div>
+		</div>
+	</div>
+</div>
+                </li:common-slide-menu>
+            </li>
+        </ul>
+    
+</div>
+		
+			<div class="lia-header-nav-component-widget lia-notes-summary lia-component-notes-widget-summary-modern" id="privateNotesSummary2">
+	<a class="lia-link-navigation private-notes-link" aria-label="Messages" title="Messages" alt="Messages" rel="nofollow" id="link" href="/t5/notes/privatenotespage"></a>
+	<div class="lia-header-nav-component-unread-count">0</div>
+</div>
+		
+			<div class="lia-header-nav-component-widget lia-component-notificationfeed-widget-indicator" id="indicator">
+	<a class="lia-link-navigation lia-notification-feed-page-link" aria-label="Notifications" title="Notifications" alt="Notifications" id="link_0" href="/t5/notificationfeed/page"></a>
+	<div class="lia-header-nav-component-unread-count">0</div>
+</div>
+		
+	
+		</div>
+	
+	
+</div>
+		</div>
+	</div><div class="lia-quilt-row lia-quilt-row-hero-banner">
+		<div class="lia-quilt-column lia-quilt-column-24 lia-quilt-column-single lia-quilt-column-hero-banner-main lia-mark-empty">
+			
+		</div>
+	</div><div class="lia-quilt-row lia-quilt-row-breadcrumb">
+		<div class="lia-quilt-column lia-quilt-column-24 lia-quilt-column-single lia-quilt-column-breadcrumb">
+			<div class="lia-quilt-column-alley lia-quilt-column-alley-single">
+	
+		
+			<div aria-label="breadcrumbs" role="navigation" class="BreadCrumb crumb-line lia-breadcrumb lia-component-common-widget-breadcrumb">
+	<ul role="list" id="list" class="lia-list-standard-inline">
+	
+		
+			<li class="lia-breadcrumb-node crumb">
+				<a class="lia-link-navigation crumb-community lia-breadcrumb-community lia-breadcrumb-forum" id="link_2" href="/">Verizon Community</a>
+			</li>
+			
+				<li aria-hidden="true" class="lia-breadcrumb-seperator crumb-community lia-breadcrumb-community lia-breadcrumb-forum">
+				  
+          		  		<span class="separator">:</span>
+          		  
+				</li>
+			
+		
+			<li class="lia-breadcrumb-node crumb final-crumb">
+				<span class="lia-link-navigation child-thread lia-link-disabled" id="link_3">About DEVONLOVSANIMALS</span>
+			</li>
+			
+		
+	
+</ul>
+</div>
+		
+	
+	
+
+	
+		<div class="page-controls lia-mark-empty">
+			
+		
+			
+    
+
+		
+	
+		</div>
+	
+	
+</div>
+		</div>
+	</div><div class="lia-quilt-row lia-quilt-row-sub-header">
+		<div class="lia-quilt-column lia-quilt-column-24 lia-quilt-column-single lia-quilt-column-sub-header-main">
+			<div class="lia-quilt-column-alley lia-quilt-column-alley-single">
+	
+		<div class="lia-profile-hero-avatar">
+			
+		
+			
+            <div class="lia-profile-hero-avatar-wrapper lia-component-user-avatar-hero">
+                <div class="UserAvatar lia-user-avatar lia-avatar-editable lia-component-common-widget-user-avatar">
+	
+		<a class="UserAvatar lia-link-navigation lia-avatar-editable lia-panel-dialog-trigger lia-panel-dialog-trigger-event-click lia-js-data-dialogKey-1077295711" id="link_4" href="#"><img class="lia-user-avatar-profile" title="DEVONLOVSANIMALS" alt="DEVONLOVSANIMALS" id="display_0" src="/t5/image/serverpage/avatar-name/Highway/avatar-theme/candy/avatar-collection/Verizon_Core/avatar-display-size/profile/version/2?xdesc=1.0"/></a>
+		<a class="lia-avatar-edit-action lia-link-navigation lia-avatar-editable lia-panel-dialog-trigger lia-panel-dialog-trigger-event-click lia-js-data-dialogKey-1077295711" id="link_5" href="#"><span class="lia-img-button-edit lia-fa-button lia-fa-edit lia-fa" title="Edit Image" alt="Edit Image" aria-label="Edit Image" role="img" id="display_1"></span></a>
+		
+	
+</div>
+            </div>
+		
+		
+	
+		</div>
+	
+	
+
+	
+		<div class="lia-profile-hero-user">
+			
+		
+			<div class="lia-user-name lia-component-users-widget-profile-user-name">
+        
+	
+
+	
+			<span class="UserName lia-user-name lia-user-rank-Member">
+				
+		
+		
+			<span class="lia-link-navigation lia-page-link lia-link-disabled lia-user-name-link" style="" target="_self" itemprop="url" id="link_6"><span class="">DEVONLOVSANIMAL<wbr />S</span></span>
+		
+		
+		
+		
+		
+		
+		
+		
+	
+			</span>
+		
+
+    </div>
+		
+			
+			<div class="lia-user-rank lia-component-user-rank">
+				Member
+			</div>
+		
+		
+			
+          <div class="custom-user-info">
+          <div class="custom-user-reg">
+            Member Since: <span class="local-date">‎06-26-2017</span>
+          </div>
+</div>
+
+		
+	
+		</div>
+	
+	
+
+	
+		
+				<div class="settings-link-wrapper">
+		<a href="/t5/user/myprofilepage" class="my-profile-link">Settings</a>
+	</div>
+ 
+		
+			
+  <div class="lia-panel lia-panel-standard custom-public-stats ">
+    <div class="lia-decoration-border">
+      <div class="lia-decoration-border-top"><div> </div></div>
+      <div class="lia-decoration-border-content">
+        <div>
+            <div class="lia-panel-heading-bar-wrapper">
+              <div class="lia-panel-heading-bar">
+                <span class="lia-panel-heading-bar-title">Statistics</span>
+              </div>
+            </div>
+          <div class="lia-panel-content-wrapper">
+            <div class="lia-panel-content">
+                                <div id="myPublicStatisticsTaplet" class="MyStatisticsTaplet">
+                                  <div class="MyStatisticsBeanDisplay">
+                                    <table class="lia-list-statistics">
+                                      <tbody>
+                                        <tr class="lia-row-odd lia-property lia-property-for-entity-user">
+                                          <td class="lia-property-label lia-data-cell-primary lia-data-cell-text">Posts</td>
+                                          <td class="lia-property-value lia-data-cell-secondary lia-data-cell-text messagesPosted">0</td>
+                                          <td class="lia-property-label lia-data-cell-primary lia-data-cell-text">Solutions</td>
+                                          <td class="lia-property-value lia-data-cell-secondary lia-data-cell-text solutions">0</td>
+                                        </tr>
+                                        <tr class="lia-row-even lia-property lia-property-for-entity-user">
+                                          <td class="lia-property-label lia-data-cell-primary lia-data-cell-text">Likes Received</td>
+                                          <td class="lia-property-value lia-data-cell-secondary lia-data-cell-text kudosReceived">0</td>
+                                          <td class="lia-property-label lia-data-cell-primary lia-data-cell-text">Likes Given</td>
+                                          <td class="lia-property-value lia-data-cell-secondary lia-data-cell-text kudosGiven">0</td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </div>
+                                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="lia-decoration-border-bottom">
+        <div> </div>
+      </div>
+    </div>
+  </div>
+
+		
+			<div class="lia-user-badge-list lia-component-badges-widget-user-badges-list" id="userBadgesListV11">
+	<div class="lia-quilt-row lia-quilt-row-standard lia-badge-list">
+	
+		
+            
+	<div class="lia-user-badge-display">
+		<span class="lia-link-navigation lia-link-disabled" id="link_7"><img title="Time Lapsed - 2 Years" alt="Time Lapsed - 2 Years" tabindex="0" id="display_2" src="/html/badge_icons/TimeLapsed_2Y.png"/></span>
+		<div class="lia-user-badge-attributes">
+			
+			
+			
+		</div>
+	</div>
+
+	
+	
+	
+	
+
+		
+            
+	<div class="lia-user-badge-display">
+		<span class="lia-link-navigation lia-link-disabled" id="link_8"><img title="Time Lapsed - 6 Months" alt="Time Lapsed - 6 Months" tabindex="0" id="display_3" src="/html/badge_icons/TimeLapsed_6M.png"/></span>
+		<div class="lia-user-badge-attributes">
+			
+			
+			
+		</div>
+	</div>
+
+	
+	
+	
+	
+
+		
+            
+	<div class="lia-user-badge-display">
+		<span class="lia-link-navigation lia-link-disabled" id="link_9"><img title="Time Lapsed - 3 Months" alt="Time Lapsed - 3 Months" tabindex="0" id="display_4" src="/html/badge_icons/TimeLapsed_3M.png"/></span>
+		<div class="lia-user-badge-attributes">
+			
+			
+			
+		</div>
+	</div>
+
+	
+	
+	
+	
+
+		
+            
+	<div class="lia-user-badge-display">
+		<span class="lia-link-navigation lia-link-disabled" id="link_10"><img title="Time Lapsed - 1 Year" alt="Time Lapsed - 1 Year" tabindex="0" id="display_5" src="/html/badge_icons/TimeLapsed_1Y.png"/></span>
+		<div class="lia-user-badge-attributes">
+			
+			
+			
+		</div>
+	</div>
+
+	
+	
+	
+	
+
+		
+	
+</div>
+	<div class="lia-view-all"><a class="lia-link-navigation" id="link_11" href="/t5/badges/userbadgespage/user-id/1416611/page/1">View all badges</a></div>
+</div>
+		
+	
+	
+</div>
+		</div>
+	</div><div class="lia-quilt-row lia-quilt-row-feedback">
+		<div class="lia-quilt-column lia-quilt-column-24 lia-quilt-column-single lia-quilt-column-feedback">
+			<div class="lia-quilt-column-alley lia-quilt-column-alley-single">
+	
+		
+			
+	
+
+	
+
+		
+			
+        
+        
+	
+
+	
+
+    
+		
+			
+		
+			<div class="announcements"></div>
+		
+	
+	
+</div>
+		</div>
+	</div>
+</div>
+		
+	
+	
+</div>
+		</div>
+	</div><div class="lia-quilt-row lia-quilt-row-main">
+		<div class="lia-quilt-column lia-quilt-column-17 lia-quilt-column-left lia-quilt-column-main-content">
+			<div class="lia-quilt-column-alley lia-quilt-column-alley-left">
+	
+		
+			
+
+  <div class="lia-panel lia-panel-standard theme-lib-user-bio ">
+    <div class="lia-decoration-border">
+      <div class="lia-decoration-border-top"><div> </div></div>
+      <div class="lia-decoration-border-content">
+        <div>
+            <div class="lia-panel-heading-bar-wrapper">
+              <div class="lia-panel-heading-bar">
+                <span class="lia-panel-heading-bar-title">About Me</span>
+              </div>
+            </div>
+          <div class="lia-panel-content-wrapper">
+            <div class="lia-panel-content">
+				<div class="bio"></div>
+					<a href="/t5/user/myprofilepage" class="my-profile-link">Edit my profile</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="lia-decoration-border-bottom">
+        <div> </div>
+      </div>
+    </div>
+  </div>
+
+		
+			
+		
+			
+		
+			
+		
+			
+		
+	
+	
+</div>
+		</div><div class="lia-quilt-column lia-quilt-column-07 lia-quilt-column-right lia-quilt-column-side-content">
+			<div class="lia-quilt-column-alley lia-quilt-column-alley-right">
+	
+		
+			
+		
+			
+		
+			
+		
+			<li:media-user-images class="lia-component-images-widget-gallery" li-bindable="" li-instance="0" componentId="images.widget.gallery" mode="default"></li:media-user-images>
+		
+			<div class="lia-panel lia-panel-standard MyStatisticsTaplet Chrome lia-component-users-widget-my-statistics"><div class="lia-decoration-border"><div class="lia-decoration-border-top"><div> </div></div><div class="lia-decoration-border-content"><div><div class="lia-panel-heading-bar-wrapper"><div class="lia-panel-heading-bar"><span aria-level="4" role="heading" class="lia-panel-heading-bar-title">Private Stats</span></div></div><div class="lia-panel-content-wrapper"><div class="lia-panel-content"><div id="myStatisticsTaplet" class="MyStatisticsTaplet">
+	<div class="MyStatisticsBeanDisplay">
+		
+		
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<table class="lia-list-statistics">
+		
+			
+		<tr class="lia-row-odd lia-property lia-property-for-entity-user lia-property-for-id-profile.name">
+	
+
+	
+
+	
+	
+	
+	
+	
+		<td class="lia-property-label lia-data-cell-primary lia-data-cell-text">
+			
+		Name
+	
+		</td>
+	
+
+	
+		
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+			<td class="lia-property-value lia-data-cell-secondary lia-data-cell-text">
+				
+		VICKI APODACA
+	
+			</td>
+		
+
+				
+</tr>
+	
+		
+			
+		<tr class="lia-row-even lia-property lia-property-for-entity-user lia-property-for-id-email">
+	
+
+	
+
+	
+	
+	
+	
+	
+		<td class="lia-property-label lia-data-cell-primary lia-data-cell-text">
+			
+		Email
+	
+		</td>
+	
+
+	
+		
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+			<td class="lia-property-value lia-data-cell-secondary lia-data-cell-text emailAddress">
+				
+		<a class="lia-link-navigation" id="link_12" href="mailto:Vicki.apodaca@yahoo.com">Vicki.apodaca@yahoo.com</a>
+	
+			</td>
+		
+
+				
+</tr>
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+	
+		
+			
+		<tr class="lia-row-odd lia-property lia-property-for-entity-user lia-property-for-id-metric.page-views">
+	
+
+	
+
+	
+	
+	
+	
+	
+		<td class="lia-property-label lia-data-cell-primary lia-data-cell-text">
+			
+		Total Page Views
+	
+		</td>
+	
+
+	
+		
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+			<td class="lia-property-value lia-data-cell-secondary lia-data-cell-text pageViews">
+				87
+			</td>
+		
+
+				
+</tr>
+	
+		
+			
+		<tr class="lia-row-even lia-property lia-property-for-entity-user lia-property-for-id-metric.message-views">
+	
+
+	
+
+	
+	
+	
+	
+	
+		<td class="lia-property-label lia-data-cell-primary lia-data-cell-text">
+			
+		Total Messages Read
+	
+		</td>
+	
+
+	
+		
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+			<td class="lia-property-value lia-data-cell-secondary lia-data-cell-text messagesRead">
+				42
+			</td>
+		
+
+				
+</tr>
+	
+		
+			
+		<tr class="lia-row-odd lia-property lia-property-for-entity-user lia-property-for-id-metric.post-count.forum-threads-started">
+	
+
+	
+
+	
+	
+	
+	
+	
+		<td class="lia-property-label lia-data-cell-primary lia-data-cell-text">
+			
+		Topics Started
+	
+		</td>
+	
+
+	
+		
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+			<td class="lia-property-value lia-data-cell-secondary lia-data-cell-text forumThreadsStarted">
+				
+		0
+	
+			</td>
+		
+
+				
+</tr>
+	
+		
+			
+		<tr class="lia-row-even lia-property lia-property-for-entity-user lia-property-for-id-metric.post-count.forum-replies">
+	
+
+	
+
+	
+	
+	
+	
+	
+		<td class="lia-property-label lia-data-cell-primary lia-data-cell-text">
+			
+		Replies
+	
+		</td>
+	
+
+	
+		
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+			<td class="lia-property-value lia-data-cell-secondary lia-data-cell-text forumReplies">
+				
+		0
+	
+			</td>
+		
+
+				
+</tr>
+	
+		
+			
+		<tr class="lia-row-odd lia-property lia-property-for-entity-user lia-property-for-id-metric.post-count.blog-articles-posted">
+	
+
+	
+
+	
+	
+	
+	
+	
+		<td class="lia-property-label lia-data-cell-primary lia-data-cell-text">
+			
+		Blog Articles Posted
+	
+		</td>
+	
+
+	
+		
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+			<td class="lia-property-value lia-data-cell-secondary lia-data-cell-text blogArticlesPosted">
+				
+		0
+	
+			</td>
+		
+
+				
+</tr>
+	
+		
+			
+		<tr class="lia-row-even lia-property lia-property-for-entity-user lia-property-for-id-metric.post-count.blog-comments-posted">
+	
+
+	
+
+	
+	
+	
+	
+	
+		<td class="lia-property-label lia-data-cell-primary lia-data-cell-text">
+			
+		Blog Comments Posted
+	
+		</td>
+	
+
+	
+		
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+			<td class="lia-property-value lia-data-cell-secondary lia-data-cell-text blogCommentsPosted">
+				
+		0
+	
+			</td>
+		
+
+				
+</tr>
+	
+		
+			
+		<tr class="lia-row-odd lia-property lia-property-for-entity-user lia-property-for-id-metric.post-count.ideas-posted">
+	
+
+	
+
+	
+	
+	
+	
+	
+		<td class="lia-property-label lia-data-cell-primary lia-data-cell-text">
+			
+		Ideas Posted
+	
+		</td>
+	
+
+	
+		
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+			<td class="lia-property-value lia-data-cell-secondary lia-data-cell-text ideasPosted">
+				
+		0
+	
+			</td>
+		
+
+				
+</tr>
+	
+		
+			
+		<tr class="lia-row-even lia-property lia-property-for-entity-user lia-property-for-id-metric.post-count.idea-comments-posted">
+	
+
+	
+
+	
+	
+	
+	
+	
+		<td class="lia-property-label lia-data-cell-primary lia-data-cell-text">
+			
+		Idea Comments Posted
+	
+		</td>
+	
+
+	
+		
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+			<td class="lia-property-value lia-data-cell-secondary lia-data-cell-text ideaCommentsPosted">
+				
+		0
+	
+			</td>
+		
+
+				
+</tr>
+	
+		
+			
+		<tr class="lia-row-odd lia-property lia-property-for-entity-user lia-property-for-id-metric.post-count.contest-entries-posted">
+	
+
+	
+
+	
+	
+	
+	
+	
+		<td class="lia-property-label lia-data-cell-primary lia-data-cell-text">
+			
+		Contest Entries	 Posted
+	
+		</td>
+	
+
+	
+		
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+			<td class="lia-property-value lia-data-cell-secondary lia-data-cell-text contestEntriesPosted">
+				
+		0
+	
+			</td>
+		
+
+				
+</tr>
+	
+		
+			
+		<tr class="lia-row-even lia-property lia-property-for-entity-user lia-property-for-id-metric.post-count.contest-comments-posted">
+	
+
+	
+
+	
+	
+	
+	
+	
+		<td class="lia-property-label lia-data-cell-primary lia-data-cell-text">
+			
+		Contest Comments Posted
+	
+		</td>
+	
+
+	
+		
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+			<td class="lia-property-value lia-data-cell-secondary lia-data-cell-text contestCommentsPosted">
+				
+		0
+	
+			</td>
+		
+
+				
+</tr>
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		<tr class="lia-row-odd lia-property lia-property-for-entity-user lia-property-for-id-metric.post-count.reviews">
+	
+
+	
+
+	
+	
+	
+	
+	
+		<td class="lia-property-label lia-data-cell-primary lia-data-cell-text">
+			
+		Reviews Posted
+	
+		</td>
+	
+
+	
+		
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+			<td class="lia-property-value lia-data-cell-secondary lia-data-cell-text reviewsPosted">
+				
+		0
+	
+			</td>
+		
+
+				
+</tr>
+	
+		
+			
+		<tr class="lia-row-even lia-property lia-property-for-entity-user lia-property-for-id-metric.post-count.review-comments">
+	
+
+	
+
+	
+	
+	
+	
+	
+		<td class="lia-property-label lia-data-cell-primary lia-data-cell-text">
+			
+		Review Comments Posted
+	
+		</td>
+	
+
+	
+		
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+			<td class="lia-property-value lia-data-cell-secondary lia-data-cell-text reviewCommentsPosted">
+				
+		0
+	
+			</td>
+		
+
+				
+</tr>
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		
+	
+		
+			
+		<tr class="lia-row-odd lia-property lia-property-for-entity-user lia-property-for-id-metric.board-views">
+	
+
+	
+
+	
+	
+	
+	
+	
+		<td class="lia-property-label lia-data-cell-primary lia-data-cell-text">
+			
+		Total Board Views
+	
+		</td>
+	
+
+	
+		
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+			<td class="lia-property-value lia-data-cell-secondary lia-data-cell-text boardViews">
+				5
+			</td>
+		
+
+				
+</tr>
+	
+		
+			
+		<tr class="lia-row-even lia-property lia-property-for-entity-user lia-property-for-id-date.last-visited">
+	
+
+	
+
+	
+	
+	
+	
+	
+		<td class="lia-property-label lia-data-cell-primary lia-data-cell-text">
+			
+		Date Last Visited
+	
+		</td>
+	
+
+	
+		
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+			<td class="lia-property-value lia-data-cell-secondary lia-data-cell-text dateLastVisited">
+				
+		<span class="DateTime">
+    
+
+	
+		
+		
+		<span class="local-date">‎11-26-2020</span>
+	
+		
+		<span class="local-time">03:40 PM</span>
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</span>
+	
+			</td>
+		
+
+				
+</tr>
+	
+		
+			
+		<tr class="lia-row-odd lia-property lia-property-for-entity-user lia-property-for-id-metric.logins">
+	
+
+	
+
+	
+	
+	
+	
+	
+		<td class="lia-property-label lia-data-cell-primary lia-data-cell-text">
+			
+		Total Signins
+	
+		</td>
+	
+
+	
+		
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+			<td class="lia-property-value lia-data-cell-secondary lia-data-cell-text logins">
+				1
+			</td>
+		
+
+				
+</tr>
+	
+		
+			
+		<tr class="lia-row-even lia-property lia-property-for-entity-user lia-property-for-id-metric.minutes-online">
+	
+
+	
+
+	
+	
+	
+	
+	
+		<td class="lia-property-label lia-data-cell-primary lia-data-cell-text">
+			
+		Total Minutes Online
+	
+		</td>
+	
+
+	
+		
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+			<td class="lia-property-value lia-data-cell-secondary lia-data-cell-text minutesOnline">
+				0
+			</td>
+		
+
+				
+</tr>
+	
+		
+			
+		<tr class="lia-row-odd lia-property lia-property-for-entity-user lia-property-for-id-user.last-visit-ipaddress">
+	
+
+	
+
+	
+	
+	
+	
+	
+		<td class="lia-property-label lia-data-cell-primary lia-data-cell-text">
+			
+		IP Address of Last Visit
+	
+		</td>
+	
+
+	
+		
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+			<td class="lia-property-value lia-data-cell-secondary lia-data-cell-text lastVisitIpAddress">
+				2605:e000:1e07:966c:99a6:e718:7a5a:992c
+			</td>
+		
+
+				
+</tr>
+	
+		
+			
+		<tr class="lia-row-even lia-property lia-property-for-entity-user lia-property-for-id-user.last-user-agent">
+	
+
+	
+
+	
+	
+	
+	
+	
+		<td class="lia-property-label lia-data-cell-primary lia-data-cell-text">
+			
+		Browser used for Last Visit
+	
+		</td>
+	
+
+	
+		
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+			<td class="lia-property-value lia-data-cell-secondary lia-data-cell-text lastVisitBrowser">
+				Mozilla/5.0 (iPhone; CPU iPhone OS 14_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1
+			</td>
+		
+
+				
+</tr>
+	
+		
+	</table>
+
+	</div>
+</div></div></div></div></div><div class="lia-decoration-border-bottom"><div> </div></div></div></div>
+		
+			
+		
+	
+	
+</div>
+		</div>
+	</div><div class="lia-quilt-row lia-quilt-row-footer">
+		<div class="lia-quilt-column lia-quilt-column-24 lia-quilt-column-single lia-quilt-column-common-footer">
+			<div class="lia-quilt-column-alley lia-quilt-column-alley-single">
+	
+		
+			<div class="lia-quilt lia-quilt-footer lia-quilt-layout-footer lia-component-quilt-footer">
+	<div class="lia-quilt-row lia-quilt-row-main">
+		<div class="lia-quilt-column lia-quilt-column-24 lia-quilt-column-single lia-quilt-column-icons">
+			<div class="lia-quilt-column-alley lia-quilt-column-alley-single">
+	
+		
+			<li:common-scroll-to class="lia-component-common-widget-scroll-to" li-bindable="" li-instance="0" componentId="common.widget.scroll-to" mode="default"></li:common-scroll-to>
+		
+			
+		
+	
+	
+</div>
+		</div>
+	</div><div class="lia-quilt-row lia-quilt-row-theme-scripts">
+		<div class="lia-quilt-column lia-quilt-column-24 lia-quilt-column-single lia-quilt-column-ui-scripts">
+			<div class="lia-quilt-column-alley lia-quilt-column-alley-single lia-mark-empty">
+	
+		
+			
+		
+			
+		
+	
+	
+</div>
+		</div>
+	</div>
+</div>
+		
+	
+	
+</div>
+		</div>
+	</div>
+</div>
+
+	
+						</div>
+					
+			</div>								
+		</div>
+	</div>
+
+				  <!-- ************ start : global footer 2.0 ************ -->
+  <div id="vz-gf20"></div>
+  <!-- ************ end : global footer 2.0 ************ -->
+  <script type="text/javascript" src="https://www.verizon.com/etc/designs/vzwcom/gnav20/personal.js"></script>
+
+			
+		</center>
+	</div>
+	
+	
+	
+	
+	<script language="JavaScript" type="text/javascript" src="https://scache.vzw.com/js/shared/sitecatalyst/s_code.js"></script>
+<script language="JavaScript" type="text/javascript"><!--
+s.prop10=document.location;
+
+if(s.getQueryParam('p')!=''){
+     s.prop59 = s.getQueryParam('p');
+}
+
+s.un="vzwiglobal"
+/* Conversion Variables */
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+var s_code=s.t();if(s_code)document.write(s_code)
+
+if(typeof s.visitorNamespace != "undefined"){
+    lenChkIe = (eval('s_i_'+s.visitorNamespace+'.src.length')); 
+    lenChkIe = lenChkIe + "|" + s.pageName; 
+    s.c_w('s_lcie',lenChkIe); 
+}
+
+try {
+var yc = document.forms.question[4];
+if(yc != 'undefined'){
+		if(document.addEventListener){
+			yc.addEventListener('click',function(){_hbLink('Yes','KB Feedback')},false)
+		}
+		else if(document.attachEvent){  
+			yc.attachEvent('onclick',function(){_hbLink('Yes','KB Feedback')});
+		}
+}
+} catch(err) {
+}
+
+try {
+var nc = document.forms.question[5];
+if(nc != 'undefined'){
+		if(nc.addEventListener){
+			nc.addEventListener('click',function(){_hbLink('No','KB Feedback')},false);
+		}
+		else if(nc.attachEvent){  
+			nc.attachEvent('onclick',function(){_hbLink('No','KB Feedback')});
+		}
+}
+} catch(err) {
+}
+//--></script>
+<script language="JavaScript" type="text/javascript"><!--
+if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+//--></script><noscript><img src="https://sanaltyics.verizonwireless.com/b/ss/vzwiglobal/1/H.23.3--NS/0"
+height="1" width="1" border="0" alt="" /></noscript><!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.23.3. -->
+
+
+	
+	
+	<script type="text/javascript">
+	new Image().src = ["/","b","e","a","c","o","n","/","9","0","1","4","4","2","9","6","2","8","6","_","1","6","0","6","4","3","4","0","0","6","3","6","7",".","g","i","f","?","u","s","e","r","I","d","=","1","4","1","6","6","1","1"].join("");
+</script>
+<script type="text/javascript" src="/t5/scripts/30B7B7689E52F3255F63CF558D0B2099/lia-scripts-angularjs-min.js"></script><script language="javascript" type="text/javascript">
+<!--
+
+LITHIUM.AngularSupport.setOptions({
+  "useCsp" : true,
+  "useNg2" : false,
+  "coreModuleDeps" : [
+    "li.directives.common.slide-menu",
+    "li.directives.community.navigation",
+    "li.directives.users.current-user",
+    "li.directives.media.user-images",
+    "li.directives.common.scroll-to",
+    "li.directives.common.non-bindable"
+  ],
+  "debugEnabled" : false
+});
+LITHIUM.AngularSupport.initGlobal(angular);// -->
+</script><script type="text/javascript" src="/t5/scripts/46DCC5B43EC438890ED8D3EBA8BAF6DE/lia-scripts-angularjsModules-min.js"></script><script language="javascript" type="text/javascript">
+<!--
+LITHIUM.AngularSupport.init();LITHIUM.Globals.restoreGlobals(['define', '$', 'jQuery', 'angular']);// -->
+</script><script type="text/javascript" src="/t5/scripts/8CE013F5307AFE1CD3E68D473B7C8DDE/lia-scripts-common-min.js"></script><script type="text/javascript" src="/t5/scripts/38767FA72993CE97D03684644EA9AE3E/lia-scripts-body-min.js"></script><script language="javascript" type="text/javascript">
+<!--
+LITHIUM.Sandbox.restore();
+LITHIUM.jQuery.fn.cssData.defaults = {"dataPrefix":"lia-js-data","pairDelimeter":"-","prefixDelimeter":"-"};
+LITHIUM.CommunityJsonObject.User.policies['forums.action.message-view.batch-messages.allow'] = false;
+	;(function($) {
+	    $(document).ready(function() {
+            for(var index=0; index < $('.header-sub-nav').length; index++) {
+                var currentElement = $('.header-sub-nav')[index];
+                $(currentElement).css('padding-left', $(currentElement).parent().offset().left);
+                var ua = window.navigator.userAgent;
+                var msie = ua.indexOf("MSIE ");
+                if (msie > 0) // If Internet Explorer, return version number
+                {
+                    $(currentElement).css('margin-left', "-" + $(currentElement).parent().offset().left + "px");
+                    $('#lia-body .message-type-selector-wrapper label').addClass('no-after');
+                }
+            }
+	    });
+	})(LITHIUM.jQuery);
+
+LITHIUM.ToastMessage({"urls":{"topicUrl":"https://live-lia-pushy-service-v2.usw2.prod.hosted.lithcloud.com/realtime/notification/5f9ddf5c-49cc-4025-b54d-51d99c15ffd8/1416611?auth=xQeRA41X0T9u9NzchzEq-ppo-3dQBUgR7B2HKEO0xHFllDn15VbZtrlL08qqvqPtUFjExNMiZ0Omk-afJwLnkifGHdVnD408WGKYVKD0JWU"},"selectors":{"element":"#realtimenotificationsubscription"},"events":{"toastMessageEvent":"LITHIUM:toastMessage"},"misc":{"fallbackTransport":"long-polling","enableProtocol":false,"debug":false,"timeoutInMs":600000,"fadeTime":7000,"toastPosition":"bottom-right","transport":"websocket","cookiePath":"/","isExplicitUserConsentForCookiesGiven":true,"validResponseSignifier":"notificationType","cookieName":"LithiumNotifications"}});
+LITHIUM.AjaxSupport.defaultAjaxFeedbackHtml = "<div class=\"lia-inline-ajax-feedback lia-component-common-widget-ajax-feedback\">\n\t\t\t<div class=\"AjaxFeedback\" id=\"ajaxFeedback_5691f1fda131c0\"><\/div>\n\t\t\t\n\t\n\n\t\n\n\t\t<\/div>";
+LITHIUM.AjaxSupport.defaultAjaxErrorHtml = "<span id=\"feedback-errorfeedback_5691f1fdcd6057\"> <\/span>\n\n\t\n\t\t<div class=\"InfoMessage lia-panel-feedback-inline-alert lia-component-common-widget-feedback\" id=\"feedback_5691f1fdcd6057\">\n\t\t\t<div role=\"alert\" class=\"lia-text\">\n\t\t\t\t\n\n\t\t\t\t\n\t\t\t\t\t<p ng-non-bindable=\"\" tabindex=\"0\">\n\t\t\t\t\t\tSorry, unable to complete the action you requested.\n\t\t\t\t\t<\/p>\n\t\t\t\t\n\n\t\t\t\t\n\n\t\t\t\t\n\n\t\t\t\t\n\t\t\t<\/div>\n\n\t\t\t\n\t\t<\/div>";
+LITHIUM.AjaxSupport({"ajaxOptionsParam":{"event":"LITHIUM:toastMessage","parameters":{"javascript.ignore_combine_and_minify":"true"}},"tokenId":"ajax","elementSelector":"#realtimenotificationsubscription","action":"toastMessage","feedbackSelector":false,"url":"https://community.verizonwireless.com/t5/user/v2/viewprofilepage.usermenu.realtimenotificationsubscription:toastmessage?t:ac=user-id/1416611&t:cp=user/contributions/tapletcontributionspage","ajaxErrorEventName":"LITHIUM:ajaxError","token":"sgFqe6KjNtQv0-mL7GEFFrHqysMLY9a8vWFCsMBF72Fn7hAaOo_h17GJL0lnPV6X"});
+LITHIUM.Link({"linkSelector":"a.lia-link-ticket-post-action"});
+LITHIUM.UserNavigation2({"selectors":{"userDropDownPanelSelectorRel":".user-navigation-settings-drop-down","userLinkSelectorRel":".user-navigation-settings-dropdown-link"},"events":{"userLinkEvent":"click"},"misc":{"toggleOnClick":true}});
+LITHIUM.PrivateNotesSummary2({"urls":{"privateMessagesUrl":"/t5/notes/privatenotespage"},"selectors":{"element":"#privateNotesSummary2"},"misc":{"isOpenInNewWindow":false}});
+LITHIUM.UserNotificationWidget({"urls":{"notificationFeedPageUrl":"/t5/notificationfeed/page"},"selectors":{"trayRel":".tray","indicatorRel":".lia-header-nav-component-unread-count","element":"#indicator"},"events":{"markReadEvent":"LITHIUM:markNotificationRead"},"misc":{"dirtyIndicatorCssClass":"unread","unreadItemCssClass":"unread"}});
+LITHIUM.AjaxSupport({"ajaxOptionsParam":{"event":"LITHIUM:markNotificationRead","parameters":{"javascript.ignore_combine_and_minify":"true"}},"tokenId":"ajax","elementSelector":document,"action":"markNotificationRead","feedbackSelector":false,"url":"https://community.verizonwireless.com/t5/user/v2/viewprofilepage.indicator:marknotificationread?t:ac=user-id/1416611&t:cp=notificationfeed/contributions/contributionpage","ajaxErrorEventName":"LITHIUM:ajaxError","token":"mzEosIsK5s0uQph-olcIYDr5TIMxqzZYboAmirBOvZwpfqMXUcqGzfIhUdyECxlK"});
+LITHIUM.AjaxSupport({"ajaxOptionsParam":{"event":"LITHIUM:lightboxRenderComponent","parameters":{"componentParams":"{\n  \"triggerSelector\" : {\n    \"value\" : \"#link_4\",\n    \"class\" : \"lithium.util.css.CssSelector\"\n  },\n  \"user\" : {\n    \"value\" : \"DEVONLOVSANIMALS\",\n    \"class\" : \"lithium.user.sql.StandardUserManager$StandardUser\"\n  }\n}","componentId":"user.widget.user-avatar-selector-tabs"},"trackableEvent":false},"tokenId":"ajax","elementSelector":"#link_4","action":"lightboxRenderComponent","feedbackSelector":false,"url":"https://community.verizonwireless.com/t5/user/v2/viewprofilepage.useravatar.link:lightboxrendercomponent?t:ac=user-id/1416611&t:cp=common/contributions/useravatarcontributionpage","ajaxErrorEventName":"LITHIUM:ajaxError","token":"2JpHkL_NBAel189viTUjLjzjIGYCi9BMS3qZ78j5ZGMDUUv3kpuiikxGfVQX45CB"});
+LITHIUM.Dialog.options['1077295711'] = {"contentContext":"user.widget.user-avatar-selector-tabs","dialogOptions":{"minHeight":399,"draggable":true,"maxHeight":800,"resizable":false,"autoOpen":false,"width":710,"minWidth":710,"dialogClass":"lia-content lia-panel-dialog lia-panel-dialog-modal-advanced","position":["center","center"],"modal":true,"maxWidth":710},"contentType":"ajax"};
+LITHIUM.Dialog({
+  "closeImageIconURL" : "https://community.verizonwireless.com/skins/images/C5C5B50466D75633609D0AED1A505BDA/responsive_peak/images/button_dialog_close.svg",
+  "closeEvent" : "LITHIUM:lightboxCloseEvent",
+  "activecastFullscreen" : false,
+  "defaultAriaLabel" : "",
+  "accessibility" : false,
+  "buttonDialogCloseAlt" : "Close",
+  "triggerSelector" : ".lia-panel-dialog-trigger-event-click",
+  "ajaxEvent" : "LITHIUM:lightboxRenderComponent",
+  "dialogContentCssClass" : "lia-panel-dialog-content",
+  "triggerEvent" : "click",
+  "dialogKey" : "dialogKey"
+});
+LITHIUM.Form.resetFieldForFocusFound();
+LITHIUM.AjaxSupport({"ajaxOptionsParam":{"event":"LITHIUM:lightboxRenderComponent","parameters":{"componentParams":"{\n  \"triggerSelector\" : {\n    \"value\" : \"#link_5\",\n    \"class\" : \"lithium.util.css.CssSelector\"\n  },\n  \"user\" : {\n    \"value\" : \"DEVONLOVSANIMALS\",\n    \"class\" : \"lithium.user.sql.StandardUserManager$StandardUser\"\n  }\n}","componentId":"user.widget.user-avatar-selector-tabs"},"trackableEvent":false},"tokenId":"ajax","elementSelector":"#link_5","action":"lightboxRenderComponent","feedbackSelector":false,"url":"https://community.verizonwireless.com/t5/user/v2/viewprofilepage.useravatar.link_0:lightboxrendercomponent?t:ac=user-id/1416611&t:cp=common/contributions/useravatarcontributionpage","ajaxErrorEventName":"LITHIUM:ajaxError","token":"0h3cnbpXvZgexzKklm2UJaHKsIAWJjv9euZaIqzGlKdAixFkrHokrImbc3fUuGW1"});
+LITHIUM.UserBadges({"viewAllSelector":"lia-view-all","userBadgesComponentSelector":"lia-user-badge-list","badgeListSelector":"lia-badge-list","badgeDisplaySelector":"lia-user-badge-display"});
+LITHIUM.InformationBox({"updateFeedbackEvent":"LITHIUM:updateAjaxFeedback","componentSelector":"#pageInformation","feedbackSelector":".InfoMessage"});
+LITHIUM.InformationBox({"updateFeedbackEvent":"LITHIUM:updateAjaxFeedback","componentSelector":"#informationbox","feedbackSelector":".InfoMessage"});
+  ;(function($) {
+	$(document).ready(function() {
+		var offset = 200,
+		    shown = false;
+
+		$(window).scroll(function(){
+			if ($(window).scrollTop() > offset) {
+				if (!shown) {
+					$('.li-common-scroll-to-wrapper').show().animate({opacity: 1}, 300);
+					shown = true;
+				}
+			} else {
+				if (shown) {
+					$('.li-common-scroll-to-wrapper').animate({opacity: 0}, 300, 
+						function() { $(this).hide() });
+					shown = false;
+				}
+			}
+		});
+	});
+  })(LITHIUM.jQuery);
+
+;(function($) {
+                
+    $(document).ready(function () {
+        $('body').click(function() {
+            $('.user-profile-card').hide();
+        });
+
+        $('body').on('click', 'a.lia-link-navigation.lia-page-link.lia-user-name-link,.UserAvatar.lia-link-navigation', function(evt) {
+                
+            if ($(this).parents('.lia-component-users-widget-menu').length > 0) {
+                return;
+            }
+
+            evt.preventDefault();
+            evt.stopPropagation();
+            $('.user-profile-card').hide();
+            if ($('.user-profile-card', this).length > 0) {
+                $('.user-profile-card', this).show();
+                return;
+            }
+
+            var divContainer = $('<div class="user-profile-card"><div class="info-container"><div class="spinner"></div></div></div>');
+            $(this).append(divContainer);
+            $(divContainer).fadeIn();
+            var userId = $(this).attr('href').replace(/.*\/user-id\//gi,'');
+            var windowWidth = $(window).width();
+            var left = $(this).offset().left;
+            var cardWidth = divContainer.outerWidth();
+
+            if ((left + cardWidth) > (windowWidth - 25)) {
+                var adjustment = (left + cardWidth) - (windowWidth + 25) + 50;
+                divContainer.css('left', (-1 * adjustment) + 'px');
+            }
+            
+            $.ajax({
+                url: '/plugins/custom/verizon/verizonwireless/theme-lib.profile-card?tid=-6845887427870532535',
+                type: 'post',
+                dataType: 'html',
+                data: {"userId": userId},
+                beforeSend: function() {},
+                success: function(data) {
+                    $('.info-container', divContainer).append(data);
+                },
+                error: function() {
+                    $('.info-container', divContainer).append('<div class=""><i class="lia-fa fa-var-close" /></div>');
+                },
+                complete: function() {
+                    $('.spinner', divContainer).remove();
+                }
+            });
+        });
+        $('body').on('click', '.user-profile-card', function(evt) {
+            if (!$(evt.target).hasClass('profile-link')) {
+                evt.preventDefault();
+            }
+            evt.stopPropagation();
+        });
+    });
+})(LITHIUM.jQuery);
+
+LITHIUM.PartialRenderProxy({"limuirsComponentRenderedEvent":"LITHIUM:limuirsComponentRendered","relayEvent":"LITHIUM:partialRenderProxyRelay","listenerEvent":"LITHIUM:partialRenderProxy"});
+LITHIUM.AjaxSupport({"ajaxOptionsParam":{"event":"LITHIUM:partialRenderProxyRelay","parameters":{"javascript.ignore_combine_and_minify":"true"}},"tokenId":"ajax","elementSelector":document,"action":"partialRenderProxyRelay","feedbackSelector":false,"url":"https://community.verizonwireless.com/t5/user/v2/viewprofilepage.liabase.basebody.partialrenderproxy:partialrenderproxyrelay?t:ac=user-id/1416611","ajaxErrorEventName":"LITHIUM:ajaxError","token":"jkNlTheI-oTyL3vrmCT6uMWzcu2qrkTmc9WtJQUTe9_idQ8A86SdvQJmYbq581em"});
+LITHIUM.Auth.API_URL = '/t5/util/authcheckpage';
+LITHIUM.Auth.LOGIN_URL_TMPL = '/plugins/common/feature/oauth2sso_v2/sso_login_redirect?referer=https%3A%2F%2FREPLACE_TEXT';
+LITHIUM.Auth.KEEP_ALIVE_URL = '/t5/status/blankpage?keepalive';
+LITHIUM.Auth.KEEP_ALIVE_TIME = 180000;
+LITHIUM.Auth.CHECK_SESSION_TOKEN = 'giMIHn-WPqwAs0Ur7jr6spp1Jl_0IN8dn5B0xdHgBDA1RmuqEDlkiC1Aojey44Js';
+LITHIUM.AjaxSupport.useTickets = false;
+LITHIUM.Loader.runJsAttached();
+// -->
+</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"errorBeacon":"bam-cell.nr-data.net","licenseKey":"90ec53e80f","agent":"","beacon":"bam-cell.nr-data.net","applicationTime":720,"applicationID":"277147645","transactionName":"M1BRYEAEWBVYURYLWAoaZFFQSmIHSVcRFkUdZVJTV19gD1xFMhBYAlxfUWIEUQM=","queueTime":0,"atts":"HxdGFggeFABLUw8HfgAXCQ0CVAJSCwtUUA9SGRFfUShZBFBeB0ANRkFBQVdHGkRSUSANQ0YPEVJTCUUDGx5ACVQwTREOEAEDBF8FVABSSQwGAwZIAlALCk8AAFBWHlUBVFMHCgtSBFECDBEYEA5VNFxBFjQFNUBWRktHDERqdy4ndDAVQVFVDEUSS1MWC1gKaldVRgQYFFxVCxFDFlRHXV0LaRJQXwdCcTZ6fhRHFlMUShI1KnI2cBNdVlgJRERP"}</script></body>
+</html>
